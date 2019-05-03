@@ -1,0 +1,18 @@
+server:
+  port: 8081
+
+jpa:
+  database-platform: H2
+  show-sql: TRUE
+  hibernate:
+    ddl-auto: 'create-drop'
+
+spring.h2.console:
+  enabled: true
+  path: /h2-console
+
+
+security:
+  user:
+    name: auth
+    password: test
