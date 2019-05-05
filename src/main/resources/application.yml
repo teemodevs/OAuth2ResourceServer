@@ -17,5 +17,5 @@ spring.h2.console:
 security:
   oauth2:
     resource:
-      user-info-uri: http://localhost:8082/me
-      token-info-uri: http://localhost:8082/check_token
+      # Authorization Server에서 Token정보를 받아옴
+      token-info-uri: http://localhost:8082/oauth/check_token
