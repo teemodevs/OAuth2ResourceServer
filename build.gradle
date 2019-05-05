@@ -41,9 +41,6 @@ dependencies {
 	// https://mvnrepository.com/artifact/org.springframework.security.oauth.boot/spring-security-oauth2-autoconfigure
 	compile group: 'org.springframework.security.oauth.boot', name: 'spring-security-oauth2-autoconfigure', version: '2.1.4.RELEASE'
 
-	// https://mvnrepository.com/artifact/org.springframework.security/spring-security-oauth2-resource-server
-	//compile group: 'org.springframework.security', name: 'spring-security-oauth2-resource-server', version: '5.1.5.RELEASE'
-
 	// https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api
 	compile group: 'javax.xml.bind', name: 'jaxb-api', version: '2.3.1'
 	
