@@ -1,14 +1,16 @@
 server:
   port: 8081
   servlet:
+    # Context Path must be specified.
+    # reason : the session tracking is cookie based and each session cookie must have a unique path
     context-path: /resource
-
 
 logging:
   level:
     org:
       springframework:
         security: DEBUG
+
 spring:
   jpa:
     # Driver Class = org.h2.Driver
@@ -18,11 +20,14 @@ spring:
     hibernate:
       ddl-auto: 'create-drop'
 
-spring.h2.console:
-  enabled: true
-  path: /h2-console
+  h2:
+    console:
+      enabled: TRUE
+      path: /h2-console
 
 security:
   oauth2:
     resource:
+      # authorization_url = "http://localhost:8082/auth"
+      # token-info-uri: <authorization_url>/oauth/check_token (default)
       token-info-uri: http://localhost:8082/auth/oauth/check_token
