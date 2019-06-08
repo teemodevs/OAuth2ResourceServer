@@ -1,0 +1,9 @@
+spring:
+  profiles: production
+
+  security:
+    oauth2:
+      resource:
+        # authorization_url = "http://oauth2authorizationserver.herokuapp.com:8082/auth"
+        # token-info-uri: <authorization_url>/oauth/check_token (default)
+        token-info-uri: http://oauth2authorizationserver.herokuapp.com:8082/auth/oauth/check_token
