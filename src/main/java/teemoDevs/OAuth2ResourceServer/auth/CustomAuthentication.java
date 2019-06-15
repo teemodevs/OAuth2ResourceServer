@@ -11,6 +11,12 @@ import org.springframework.security.core.GrantedAuthority;
 
 import java.util.Collection;
 
+/**
+ * 커스텀 Authentication
+ * 1. /me 엔드포인트의 유저 정보(CustomOAuth2User) DTO
+ * 2. {@link Authentication}를 구현하여 Spring Security에 필요한 메서드와 값들을 제공
+ * 3. Client에게 부가적인 정보(email 등)를 전송
+ * */
 @Getter
 @Setter
 @NoArgsConstructor
@@ -25,6 +31,7 @@ public class CustomAuthentication implements Authentication {
     public CustomAuthentication(Authentication authentication) {
         this.authentication = authentication;
     }
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return authentication.getAuthorities();
