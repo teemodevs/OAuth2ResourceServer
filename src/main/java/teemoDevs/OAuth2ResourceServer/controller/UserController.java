@@ -3,6 +3,7 @@ package teemoDevs.OAuth2ResourceServer.controller;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import teemoDevs.OAuth2ResourceServer.auth.CustomAuthentication;
 
 import java.security.Principal;
 
@@ -13,6 +14,9 @@ public class UserController {
 	// Principal.getName()을 기반으로 유저 데이터를 쿼리해서 커스텀 데이터로 반환
 	@RequestMapping("/me")
 	public Authentication user(Principal principal, Authentication authentication) {
+
+		CustomAuthentication customAuthentication = new CustomAuthentication(authentication);
+		customAuthentication.setEmail("email@email.com");
 		System.out.println("principal.toString() : " + principal.toString());
 		System.out.println("principal.getName() : " + principal.getName());
 
@@ -23,6 +27,6 @@ public class UserController {
 		System.out.println("authentication.getPrincipal() : " + authentication.getPrincipal());
 		System.out.println("authentication.isAuthenticated() : " + authentication.isAuthenticated());
 
-		return authentication;
+		return customAuthentication;
 	}
 }
