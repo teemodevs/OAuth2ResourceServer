@@ -1,9 +1,12 @@
+server:
+  port: 8080
+
 spring:
   profiles: production
 
 security:
   oauth2:
     resource:
-      # authorization_url = "http://oauth2authorizationserver.herokuapp.com:8082/auth"
+      # authorization_url = "http://oauth2authorizationserver.herokuapp.com/auth"
       # token-info-uri: <authorization_url>/oauth/check_token (default)
-      token-info-uri: http://oauth2authorizationserver.herokuapp.com:8082/auth/oauth/check_token
+      token-info-uri: http://oauth2authorizationserver.herokuapp.com/auth/oauth/check_token
